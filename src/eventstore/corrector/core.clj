@@ -28,3 +28,4 @@
   (doto (.createStatement connection)
     (.execute "LISTEN new_event;")
     (.close)))
+(arm-listener)
