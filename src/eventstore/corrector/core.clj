@@ -22,6 +22,9 @@
 
 ;; the println response from above appears in the *cider-nrepl localhost* Buffer
 ;; in emacs
-(doto (.createStatement connection)
-  (.execute "LISTEN new_event;")
-  (.close))
+(defn arm-listener
+  "Creates listener for new events in the eventstore."
+  []
+  (doto (.createStatement connection)
+    (.execute "LISTEN new_event;")
+    (.close)))
