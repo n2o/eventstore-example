@@ -2,6 +2,8 @@
   (:import [com.impossibl.postgres.jdbc PGDataSource]
            [com.impossibl.postgres.api.jdbc PGNotificationListener]))
 
+;; Based on https://dzone.com/articles/notify-events-from-postgresql-to-external-listener
+
 (def datasource
   (doto (PGDataSource.)
     (.setHost "localhost")
